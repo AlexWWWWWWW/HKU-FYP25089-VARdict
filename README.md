@@ -14,6 +14,8 @@ torchvision==0.16.0
 
 imageio
 sentencepiece
+bitsandbytes (for 8 bit quantization)
+accelerate
 
 pip install -U openmim
 mim install mmengine
