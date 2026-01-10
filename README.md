@@ -12,6 +12,8 @@ make sure in ~/.local/bin there is no pip*, in ~/.local/libs/python*/site-packag
 torch==2.1.0
 torchvision==0.16.0
 
+imageio
+
 pip install -U openmim
 mim install mmengine
 install mmcv using the wheel file
