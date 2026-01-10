@@ -16,6 +16,7 @@ imageio
 sentencepiece
 bitsandbytes (for 8 bit quantization)
 accelerate
+protobuf
 
 pip install -U openmim
 mim install mmengine
