@@ -14,7 +14,7 @@ torchvision==0.16.0
 
 imageio
 sentencepiece
-bitsandbytes (for 8 bit quantization)
+bitsandbytes==0.42.0 (for 8 bit quantization)
 accelerate
 protobuf
 
