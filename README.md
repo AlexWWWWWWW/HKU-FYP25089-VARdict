@@ -24,7 +24,7 @@ install mmcv using the wheel file
 mim install mmdet
 mim install mmpose, requires chumpy, need to download and make a dummy one, also set --no-build-isolation
 
-use flash-attn==2.8.3, the latest that handles dependencies automatically. use --no-build-isolation --no-cache-dir
+use flash-attn==2.5.7, compatible with torch 2.1.0, do not use pip install, use the wheel file in this repository
 
 finally, use numpy==1.26.4, uninstall both opencv-python and opencv-python-headless, and then install opencv-python-headless. this is because mmpose and mmcv will automatically install the latest numpy and opencv-python, **IMPORTANT**: mmcv will reset opencv to opencv-python, not useable in server environment.
 
