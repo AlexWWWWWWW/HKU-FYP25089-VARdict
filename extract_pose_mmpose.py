@@ -31,7 +31,8 @@ NUM_KEYPOINTS = 17 # RTMPose 默认是 COCO 17点，如果需要26点或133点�
 
 for frame_idx, result in enumerate(result_generator):
     # result 是一个字典，里面包含了 'predictions'
-    predictions = result['predictions']
+    # results['predictions'] 是一个嵌套列表，像[[{人1}, {人2}]]，列表中每个元素对应一个检测到的人体
+    predictions = result['predictions'][0]
     
     print(predictions)
 
