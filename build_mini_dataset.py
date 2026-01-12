@@ -9,7 +9,8 @@ from tqdm import tqdm
 from mmpose.apis import MMPoseInferencer
 
 # ================= 配置区域 =================
-SOURCE_ROOT = "/userhome/cs/u3598820/soccernet/mvfouls"  # 原始数据集根目录
+SOURCE_ROOT = "/userhome/cs/u3598820/soccernet/mvfouls"  # 原始数据集根目录 (用于提取 Pose)
+CLIP_ROOT = "/userhome/cs/u3598820/check_size/mvfouls"   # CLIP 特征根目录 (用于复制 .pkl)
 TARGET_ROOT = "/userhome/cs/u3598820/HKU-FYP25089-VARdict/mini_dataset"  # 你的目标小数据集路径
 NUM_SAMPLES = 100               # 采样数量
 SPLIT = "Train"                 # 从哪个集采样
@@ -70,7 +71,7 @@ def main():
     print("正在加载 MMPose 模型...")
     inferencer = MMPoseInferencer('human', device=DEVICE)
 
-    # 2. 确定源文件夹列表
+    # 2. 确定源文件夹列表 (从 SOURCE_ROOT 找视频)
     source_split_dir = os.path.join(SOURCE_ROOT, SPLIT)
     # 假设结构是 .../Train/action_0, .../Train/action_1
     all_action_dirs = sorted(glob.glob(os.path.join(source_split_dir, "action_*")))
@@ -95,9 +96,14 @@ def main():
         action_name = os.path.basename(action_dir) # e.g., "action_123"
         target_action_dir = os.path.join(target_split_dir, action_name)
         
+        # 建立 CLIP 特征对应的目录路径
+        # 结构: CLIP_ROOT / Train / action_123
+        clip_action_dir = os.path.join(CLIP_ROOT, SPLIT, action_name)
+        
         os.makedirs(target_action_dir, exist_ok=True)
 
         # A. 查找该文件夹下所有的视频 (clip_1.mp4, clip_2.mp4 ...)
+        # 注意：这里是从 SOURCE_ROOT 下的 action_dir 找视频
         video_files = glob.glob(os.path.join(action_dir, VIDEO_PATTERN))
 
         for video_file in video_files:
@@ -105,9 +111,9 @@ def main():
             clip_id = clip_name.split('.')[0]        # clip_1
             
             # --- 任务 1: 复制 CLIP 特征 (.pkl) ---
-            # 假设 create_features.py 生成的文件名为 PRE_CLIP_feature_clip_1.pkl
+            # 修改：从 CLIP_ROOT 对应的路径找 .pkl
             pkl_name = f"PRE_CLIP_feature_{clip_id}.pkl"
-            src_pkl_path = os.path.join(action_dir, pkl_name)
+            src_pkl_path = os.path.join(clip_action_dir, pkl_name)
             dst_pkl_path = os.path.join(target_action_dir, pkl_name)
 
             if os.path.exists(src_pkl_path):
@@ -117,6 +123,7 @@ def main():
                 continue # 如果没有 CLIP 特征，通常这个样本也没法用，直接跳过
 
             # --- 任务 2: 提取并保存 Pose 特征 (.npy) ---
+            # 修改：继续使用 SOURCE_ROOT 里的 video_file 进行 Pose 提取
             npy_name = f"{clip_id}_pose.npy"
             dst_npy_path = os.path.join(target_action_dir, npy_name)
 
