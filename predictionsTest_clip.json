@@ -1,0 +1,2030 @@
+{
+    "Set": "Test",
+    "Actions": {
+        "action_0/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Pushing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_1/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_2/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_2/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_2/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_3/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_4/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_5/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_6/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_6/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_6/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_7/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_8/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_9/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_10/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_11/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_12/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_13/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_13/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_14/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_14/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_15/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_16/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_17/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_17/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_18/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_19/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_20/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_21/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Dive",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_21/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Dive",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_21/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Dive",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_22/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_22/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_23/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_23/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_24/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_25/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_25/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_26/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_27/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_27/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_28/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_29/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_30/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_31/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_31/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_32/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_33/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_34/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_34/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_35/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_35/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_36/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_37/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_38/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_39/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_40/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_41/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_42/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_43/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_44/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_44/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_45/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_46/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_46/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_46/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_47/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_48/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_49/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_49/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_50/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_50/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_51/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_52/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_52/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_53/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_53/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_54/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_55/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_55/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_56/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_57/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_58/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_59/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_60/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_61/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_61/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_62/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_62/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_63/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_64/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_64/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_65/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_65/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_66/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_66/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_67/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_68/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_69/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_70/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_70/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_71/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_72/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_73/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_73/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_74/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_75/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_76/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_77/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_78/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Dive",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_78/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_78/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_79/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_79/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_80/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_81/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_81/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_82/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_83/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_84/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_85/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_86/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_87/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_87/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_88/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_89/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_90/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_90/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_91/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_92/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_93/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_94/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_95/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_96/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_97/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_97/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_97/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_98/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_98/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_99/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_99/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_100/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_101/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_102/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_102/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_103/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_104/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_105/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_106/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_106/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_106/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_107/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_107/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_108/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_108/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_109/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_109/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_110/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_110/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_110/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_111/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_112/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_113/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_114/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_115/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_115/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_115/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_116/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_116/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_117/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_118/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_118/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_118/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_119/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_120/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_120/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_121/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_121/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_122/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_123/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_124/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_124/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_125/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_126/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_127/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_128/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_129/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_130/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_131/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_132/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_133/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_134/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_135/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_135/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_136/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_137/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_138/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_139/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_140/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_141/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_142/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_143/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_144/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_144/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_145/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_146/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_147/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_148/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_149/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_150/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Pushing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_150/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_151/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_152/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_153/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_154/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_154/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_155/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_156/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_156/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_157/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_158/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_158/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_159/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_159/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_160/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_161/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_162/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_163/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_164/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_165/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_165/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_166/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_166/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_167/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_168/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_169/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_170/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_170/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_171/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_171/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_172/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_173/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_174/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_174/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_175/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_176/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_177/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_177/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_178/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_179/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_180/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_181/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_182/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_183/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_183/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_184/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_185/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_186/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_187/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_188/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_188/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Pushing",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_188/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_189/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_190/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_191/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_191/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Pushing",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_192/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_193/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_193/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_194/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_195/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Pushing",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_195/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_196/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_197/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_198/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_198/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_199/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_199/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_200/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_201/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_202/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_202/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_203/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_204/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_205/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_206/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_206/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_207/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_208/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_208/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_209/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_210/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Pushing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_210/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_211/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_212/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_212/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_213/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_214/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_214/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_215/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_215/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_216/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_217/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_218/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_219/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_220/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_221/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_222/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_223/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Dive",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_223/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_223/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_224/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_224/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_225/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_226/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_227/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_227/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_227/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Dive",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_228/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_228/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_229/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_230/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_230/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_231/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_232/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_233/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_234/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_235/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_236/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_237/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_238/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_239/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_239/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_240/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_241/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_242/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_243/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_243/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_243/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_244/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_245/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_246/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_247/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_248/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_249/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_249/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_250/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_251/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_251/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_251/PRE_CLIP_feature_clip_3.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_252/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_253/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_254/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_255/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_256/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_257/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_258/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_259/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_260/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_261/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_262/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_263/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_264/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_265/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_266/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_266/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "5.0"
+        },
+        "action_267/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_268/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_269/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_270/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_271/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_272/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_273/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_274/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_275/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_276/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Elbowing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_277/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_278/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_278/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Pushing",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_279/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_280/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_281/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_282/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_283/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_284/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_285/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Holding",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_286/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "High leg",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_287/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Tackling",
+            "Offence": "Offence",
+            "Severity": "3.0"
+        },
+        "action_287/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Tackling",
+            "Offence": "No offence",
+            "Severity": ""
+        },
+        "action_288/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_289/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_290/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_291/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_291/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_292/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_292/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_293/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_294/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_294/PRE_CLIP_feature_clip_2.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_295/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_296/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_297/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_298/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_299/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Challenge",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        },
+        "action_300/PRE_CLIP_feature_clip_1.pkl": {
+            "Action class": "Standing tackling",
+            "Offence": "Offence",
+            "Severity": "1.0"
+        }
+    }
+}
