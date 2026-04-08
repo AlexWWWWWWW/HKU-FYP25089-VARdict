@@ -66,4 +66,10 @@ such as`python gradio_script.py --port 7860`
 Once the tunnel is running, open your local browser and visit:
 **[http://localhost:7860](https://www.google.com/search?q=http://localhost:7860)**
 
+### Valid video format: .mp4
+
+Although some files have a suffix of .mp4, it may be a fake .mp4 file. Please use the following command to cast the format if the .mp4 is not playable:  
+`ffmpeg -i fake.mp4 -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac real.mp4`
+
+
 
