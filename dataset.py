@@ -29,8 +29,16 @@ class VARdictDataset(Dataset):
                  json_path_qa,           # annotations_train.json
                  json_path_predictions,  # clean 后的 predictionsTrain_clip.json
                  tokenizer, 
-                 video_token_len=300):
+                 video_token_len=300,
+                 mode="train",
+                 json_path_ground_truth=None,):
         
+        self.mode = mode                 # mode
+        if self.mode == "eval":
+            if json_path_ground_truth is None: raise Exception("no ground truth for evaluation.")
+            print(f"Loading Ground Truth from {json_path_ground_truth}...")
+            with open(json_path_ground_truth, 'r') as f:
+                self.gt_data = json.load(f)
         self.data_root = os.path.join(data_root, split)
         self.split = split
         self.tokenizer = tokenizer
@@ -178,39 +186,57 @@ class VARdictDataset(Dataset):
         
         conv = conv_templates[self.conv_mode].copy()
         conv.append_message(conv.roles[0], qs)
-        conv.append_message(conv.roles[1], answer)
-        prompt = conv.get_prompt()
 
-        # 5. Tokenize
-        input_ids = self.tokenizer(
-            prompt,
-            return_tensors="pt",
-            padding="max_length",
-            max_length=self.tokenizer.model_max_length,
-            truncation=True,
-        ).input_ids
 
-        targets = input_ids.clone()
+        if self.mode == "train":
+            conv.append_message(conv.roles[1], answer)
+            prompt = conv.get_prompt()
 
-        # 6. Masking (只训练 Assistant 回答部分)
-        sep = "ASSISTANT:"
-        total_len = int(targets.ne(self.tokenizer.pad_token_id).sum())
-        
-        parts = prompt.split(sep)
-        if len(parts) >= 2:
-            # Mask 掉 "USER: ... \nASSISTANT:"
-            instruction_len = len(self.tokenizer(parts[0]).input_ids) - 1 
-            targets[0, :instruction_len] = IGNORE_INDEX
-        
-        # Mask 掉 Padding
-        cur_len = total_len
-        targets[0, cur_len:] = IGNORE_INDEX
+            # 5. Tokenize
+            input_ids = self.tokenizer(
+                prompt,
+                return_tensors="pt",
+                padding="max_length",
+                max_length=self.tokenizer.model_max_length,
+                truncation=True,
+            ).input_ids
 
-        return dict(
-            input_ids=input_ids.squeeze(),
-            labels=targets.squeeze(),
-            attention_mask=input_ids.ne(self.tokenizer.pad_token_id).squeeze(),
-        )
+            targets = input_ids.clone()
+
+            # 6. Masking (只训练 Assistant 回答部分)
+            sep = "ASSISTANT:"
+            total_len = int(targets.ne(self.tokenizer.pad_token_id).sum())
+            
+            parts = prompt.split(sep)
+            if len(parts) >= 2:
+                # Mask 掉 "USER: ... \nASSISTANT:"
+                instruction_len = len(self.tokenizer(parts[0]).input_ids) - 1 
+                targets[0, :instruction_len] = IGNORE_INDEX
+            
+            # Mask 掉 Padding
+            cur_len = total_len
+            targets[0, cur_len:] = IGNORE_INDEX
+
+            return dict(
+                input_ids=input_ids.squeeze(),
+                labels=targets.squeeze(),
+                attention_mask=input_ids.ne(self.tokenizer.pad_token_id).squeeze(),
+            )
+        elif self.mode == "eval":
+            conv.append_message(conv.roles[1], None) # 评估时：空出答案位置
+            prompt = conv.get_prompt()
+            
+            # 评估时：不需要 padding，直接返回紧凑的张量
+            tokenized = self.tokenizer(
+                prompt,
+                return_tensors="pt",
+                truncation=True,
+                max_length=self.tokenizer.model_max_length
+            )
+            return dict(
+                input_ids=tokenized.input_ids.squeeze(),
+                attention_mask=tokenized.attention_mask.squeeze()
+            )
 
     def __len__(self):
         return len(self.samples)
@@ -286,50 +312,82 @@ class VARdictDataset(Dataset):
         # 3. Process Text (直接传入准备好的 key)
         text_data = self.preprocess_text(sample['action_key'], sample['pred_key'])
 
-        # 在 __getitem__ 最后
-        valid_labels = (text_data["labels"] != -100).sum()
-        if valid_labels == 0:
-            print(f"⚠️ Warning: Sample {idx} has NO valid labels (all -100)!")
+        if self.mode == "train":
+            # 训练模式：保持原样，吐出带有 labels 的张量字典
+            return {
+                "input_ids": text_data["input_ids"],
+                "labels": text_data["labels"],
+                "attention_mask": text_data["attention_mask"],
+                "video_spatio_temporal_features": clip_tensor,
+                "pose_spatio_temporal_features": pose_tensor
+            }
+        elif self.mode == "eval":
+            qa_data = self.qa_lookup[sample['action_key']]
+            
+            # 1. 提取 Action ID (从 "action_2915" 或 "Train/action_2915" 中提取 "2915")
+            action_id = sample['action_key'].split('_')[-1]
+            
+            # 2. 从终极 Ground Truth JSON 里捞出人类裁判标注
+            gt_entry = self.gt_data.get(action_id, {})
+            
+            raw_offence = gt_entry.get("Offence", "Unknown")
+            raw_severity = str(gt_entry.get("Severity", ""))
+            
+            # 3. 严重程度映射 (对齐你传给 ChatGPT 的提取要求)
+            if raw_severity == "": # 像你发的例子，没犯规就是空字符串
+                gt_mapped_severity = "No Card"
+            else:
+                severity_map = {
+                    "1.0": "No Card", "1": "No Card",
+                    "2.0": "No Card", "2": "No Card",
+                    "3.0": "Yellow Card", "3": "Yellow Card",
+                    "4.0": "Red Card", "4": "Red Card",
+                    "5.0": "Red Card", "5": "Red Card"
+                }
+                gt_mapped_severity = severity_map.get(raw_severity, "Unknown")
+            
+            return {
+                "input_ids": text_data["input_ids"],
+                "attention_mask": text_data["attention_mask"],
+                "video_spatio_temporal_features": clip_tensor,
+                "pose_spatio_temporal_features": pose_tensor,
+                
+                "video_id": sample['debug_id'],
+                "raw_question": qa_data["question"],
+                "gt_explanation": qa_data["answer"],
+                # ⬇️ 算分必备的无污染 Ground Truth ⬇️
+                "gt_offence": raw_offence,         # 例如: "No offence"
+                "gt_severity": gt_mapped_severity  # 例如: "No Card"
+            }
 
 
-        # print("LABELS:", text_data["labels"], "===========")
-
-        # ================= 🔥 核心监控：Label 有效性检查 🔥 =================
-        labels_tensor = text_data["labels"] # 假设它是 tensor
-        
-        # 1. 计算理论上“全虚无”时的总和
-        # 如果全是 -100，sum 应该等于：长度 * -100
-        num_elements = labels_tensor.numel()
-        expected_void_sum = num_elements * -100
-        
-        # 2. 计算实际总和与有效 Token 数量
-        actual_sum = labels_tensor.sum().item()
-        valid_label_mask = (labels_tensor != -100)
-        num_valid_tokens = valid_label_mask.sum().item()
-        
-        # 3. 打印诊断结果
-        if num_valid_tokens == 0:
-            print(f"❌ [Idx:{idx}] !!! CRITICAL !!! ALL labels are -100. Expected Sum: {expected_void_sum}, Actual: {actual_sum}")
-        else:
-            # 找到第一个有效 token 的值作为参考
-            first_valid_val = labels_tensor[valid_label_mask][0].item()
-            # print(f"✅ [Idx:{idx}] Valid Labels Found! Count: {num_valid_tokens}/{num_elements}, First Valid TokenID: {first_valid_val}")
-        
-        # 检查是否有非法 Token ID (比如超出词表或负数)
-        if num_valid_tokens > 0:
-            max_id = labels_tensor.max().item()
-            if max_id > 32000: # 假设 Llama 词表 32000 左右
-                 print(f"⚠️ [Idx:{idx}] Warning: Token ID {max_id} might be out of vocab!")
-        # ===================================================================
-
-
-        return {
-            "input_ids": text_data["input_ids"],
-            "labels": text_data["labels"],
-            "attention_mask": text_data["attention_mask"],
-            "video_spatio_temporal_features": clip_tensor,
-            "pose_spatio_temporal_features": pose_tensor
-        }
+            # 1. 从 QA json 里捞出原始问题和参考解释
+            qa_data = self.qa_lookup[sample['action_key']]
+            
+            # 2. 从 Predictions (Truth) json 里捞出量化指标
+            pred_entry = self.pred.get(sample['pred_key'], {})
+            raw_severity = str(pred_entry.get("Severity", "Unknown"))
+            
+            # 把 1.0, 3.0 转换成文本，对齐 ChatGPT 的提取结果
+            severity_map = {
+                "1.0": "No Card", "1": "No Card",
+                "3.0": "Yellow Card", "3": "Yellow Card",
+                "5.0": "Red Card", "5": "Red Card",
+            }
+            
+            return {
+                "input_ids": text_data["input_ids"],
+                "attention_mask": text_data["attention_mask"],
+                "video_spatio_temporal_features": clip_tensor,
+                "pose_spatio_temporal_features": pose_tensor,
+                
+                # ⬇️ 这里就是 Eval Pipeline 需要的所有明文信息 ⬇️
+                "video_id": sample['debug_id'],
+                "raw_question": qa_data["question"],
+                "gt_explanation": qa_data["answer"],
+                "gt_offence": pred_entry.get("Offence", "Unknown"), 
+                "gt_severity": severity_map.get(raw_severity, "Unknown")
+            }
 
 
 # ==============================================================================
