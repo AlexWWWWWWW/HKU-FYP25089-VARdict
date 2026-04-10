@@ -6,6 +6,8 @@ from torch.utils.data import Dataset
 import json
 import glob
 import sys
+import random
+random.seed(42) # 锁死随机种子
 
 # 请确保这个路径包含 video_chatgpt 文件夹
 # sys.path.append("/userhome/cs/u3598820/X-VARS/X-VARS")
@@ -38,7 +40,8 @@ class VARdictDataset(Dataset):
             if json_path_ground_truth is None: raise Exception("no ground truth for evaluation.")
             print(f"Loading Ground Truth from {json_path_ground_truth}...")
             with open(json_path_ground_truth, 'r') as f:
-                self.gt_data = json.load(f)
+                raw_gt = json.load(f)
+                self.gt_data = raw_gt.get("Actions", raw_gt)
         self.data_root = os.path.join(data_root, split)
         self.split = split
         self.tokenizer = tokenizer
@@ -53,8 +56,12 @@ class VARdictDataset(Dataset):
             raw_data = json.load(f)
             # 建立查找表: "action_0" -> {question, answer}
             # 注意：这里假设 annotations 里的 path 就是 "action_0" 这种格式
-            self.qa_lookup = {item['path']: item for item in raw_data}
-
+            self.qa_lookup = {}
+            for item in raw_data:
+                path = item['path']
+                if path not in self.qa_lookup:
+                    self.qa_lookup[path] = []
+                self.qa_lookup[path].append(item)
         # ---------------------------------------------------------
         # 2. 加载 Prediction (你的 Clean JSON)
         # ---------------------------------------------------------
@@ -136,7 +143,9 @@ class VARdictDataset(Dataset):
         - pred_key: 用于 self.pred (精准匹配)
         """
         # 1. 获取 QA
-        qa_data = self.qa_lookup[qa_key]
+        qa_list = self.qa_lookup[qa_key]
+        qa_data = random.choice(qa_list) # 从这个视频的多个问题中随机抽一个
+        # qa_data = self.qa_lookup[qa_key]
         question = qa_data["question"]
         answer = qa_data["answer"]
 
@@ -182,13 +191,50 @@ class VARdictDataset(Dataset):
         pred_action = action_map.get(pred_action, pred_action + " ")
 
         # 4. 组装 Prompt
-        qs = question + " The prediction for this video is " + pred_action + pred_off + '\n' + DEFAULT_VID_START_TOKEN + DEFAULT_VIDEO_PATCH_TOKEN * self.video_token_len + DEFAULT_VID_END_TOKEN
+        if self.mode == "eval":
+            eval_question_1 = "Is it a foul or not? Why?"
+            eval_question_2 = "What card would you give and why?"
+            q1 = eval_question_1 + " The prediction for this video is " + pred_action + pred_off + '\n' + DEFAULT_VID_START_TOKEN + DEFAULT_VIDEO_PATCH_TOKEN * self.video_token_len + DEFAULT_VID_END_TOKEN
+            q2 = eval_question_2 + " The prediction for this video is " + pred_action + pred_off + '\n' + DEFAULT_VID_START_TOKEN + DEFAULT_VIDEO_PATCH_TOKEN * self.video_token_len + DEFAULT_VID_END_TOKEN
         
-        conv = conv_templates[self.conv_mode].copy()
-        conv.append_message(conv.roles[0], qs)
+
+            conv1 = conv_templates[self.conv_mode].copy()
+            conv1.append_message(conv1.roles[0], q1)
+            conv1.append_message(conv1.roles[1], None)
+            
+            conv2 = conv_templates[self.conv_mode].copy()
+            conv2.append_message(conv2.roles[0], q2)
+            conv2.append_message(conv2.roles[1], None)
+
+            return dict(
+                input_ids_foul=self.tokenizer(conv1.get_prompt(), return_tensors="pt", truncation=True, max_length=self.tokenizer.model_max_length).input_ids.squeeze(),
+                attention_mask_foul=self.tokenizer(conv1.get_prompt(), return_tensors="pt", truncation=True, max_length=self.tokenizer.model_max_length).attention_mask.squeeze(),
+                input_ids_card=self.tokenizer(conv2.get_prompt(), return_tensors="pt", truncation=True, max_length=self.tokenizer.model_max_length).input_ids.squeeze(),
+                attention_mask_card=self.tokenizer(conv2.get_prompt(), return_tensors="pt", truncation=True, max_length=self.tokenizer.model_max_length).attention_mask.squeeze()
+            )
+
+            # # 评估时：不需要 padding，直接返回紧凑的张量
+            # tokenized = self.tokenizer(
+            #     prompt,
+            #     return_tensors="pt",
+            #     truncation=True,
+            #     max_length=self.tokenizer.model_max_length
+            # )
+            # return dict(
+            #     input_ids=tokenized.input_ids.squeeze(),
+            #     attention_mask=tokenized.attention_mask.squeeze()
+            # )
 
 
-        if self.mode == "train":
+
+
+
+        elif self.mode == "train":
+            qs = question + " The prediction for this video is " + pred_action + pred_off + '\n' + DEFAULT_VID_START_TOKEN + DEFAULT_VIDEO_PATCH_TOKEN * self.video_token_len + DEFAULT_VID_END_TOKEN
+        
+            conv = conv_templates[self.conv_mode].copy()
+            conv.append_message(conv.roles[0], qs)
+
             conv.append_message(conv.roles[1], answer)
             prompt = conv.get_prompt()
 
@@ -221,21 +267,6 @@ class VARdictDataset(Dataset):
                 input_ids=input_ids.squeeze(),
                 labels=targets.squeeze(),
                 attention_mask=input_ids.ne(self.tokenizer.pad_token_id).squeeze(),
-            )
-        elif self.mode == "eval":
-            conv.append_message(conv.roles[1], None) # 评估时：空出答案位置
-            prompt = conv.get_prompt()
-            
-            # 评估时：不需要 padding，直接返回紧凑的张量
-            tokenized = self.tokenizer(
-                prompt,
-                return_tensors="pt",
-                truncation=True,
-                max_length=self.tokenizer.model_max_length
-            )
-            return dict(
-                input_ids=tokenized.input_ids.squeeze(),
-                attention_mask=tokenized.attention_mask.squeeze()
             )
 
     def __len__(self):
@@ -322,7 +353,7 @@ class VARdictDataset(Dataset):
                 "pose_spatio_temporal_features": pose_tensor
             }
         elif self.mode == "eval":
-            qa_data = self.qa_lookup[sample['action_key']]
+            qa_data = self.qa_lookup[sample['action_key']][0] # not used, should be a list
             
             # 1. 提取 Action ID (从 "action_2915" 或 "Train/action_2915" 中提取 "2915")
             action_id = sample['action_key'].split('_')[-1]
@@ -346,6 +377,21 @@ class VARdictDataset(Dataset):
                 }
                 gt_mapped_severity = severity_map.get(raw_severity, "Unknown")
             
+            return {
+                # 接收拆分后的两套张量
+                "input_ids_foul": text_data["input_ids_foul"],
+                "input_ids_card": text_data["input_ids_card"],
+                "attention_mask_foul": text_data["attention_mask_foul"], # 👈 乖乖交出 Mask
+                "attention_mask_card": text_data["attention_mask_card"], # 👈 乖乖交出 Mask
+
+
+                "video_spatio_temporal_features": clip_tensor,
+                "pose_spatio_temporal_features": pose_tensor,
+                "video_id": sample['debug_id'],
+                "raw_question": "", 
+                "gt_offence": raw_offence,         
+                "gt_severity": gt_mapped_severity  
+            }
             return {
                 "input_ids": text_data["input_ids"],
                 "attention_mask": text_data["attention_mask"],
