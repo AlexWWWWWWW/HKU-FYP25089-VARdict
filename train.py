@@ -149,8 +149,8 @@ def main():
         # learning_rate=1e-3, 
         learning_rate=1e-4, 
         num_train_epochs=1,
-        # save_strategy="epoch", # 跑完 Phase 1 存一下，防止崩了重来
-        save_strategy="no", # keep disk clean
+        save_strategy="epoch", # 跑完 Phase 1 存一下，防止崩了重来
+        # save_strategy="no", # keep disk clean
         logging_steps=1,
         remove_unused_columns=False,
         report_to="none"
@@ -206,8 +206,9 @@ def main():
         per_device_train_batch_size=2,
         gradient_accumulation_steps=4,
         learning_rate=2e-4, 
-        num_train_epochs=1,
-        save_strategy="no", # 最后不存，保持硬盘清洁 (按你要求)
+        num_train_epochs=3,
+        # save_strategy="no", # 最后不存，保持硬盘清洁 (按你要求)
+        save_strategy="epoch",
         logging_steps=1,
         remove_unused_columns=False,
         report_to="none",
