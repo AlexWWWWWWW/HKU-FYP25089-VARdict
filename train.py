@@ -206,7 +206,7 @@ def main():
         per_device_train_batch_size=2,
         gradient_accumulation_steps=4,
         learning_rate=2e-4, 
-        num_train_epochs=3,
+        num_train_epochs=1, # one is enough
         # save_strategy="no", # 最后不存，保持硬盘清洁 (按你要求)
         save_strategy="epoch",
         logging_steps=1,
