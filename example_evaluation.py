@@ -44,8 +44,8 @@ from dataset import VARdictDataset
 def main():
     # ================= 1. 配置区域 =================
     X_VARS_WEIGHTS = "/userhome/cs/u3598820/X-VARS_weight/X-VARS_weights" 
-    PHASE1_PATH = "./_checkpoints/phase1/final"
-    LORA_PATH = "./_checkpoints/phase2/final_lora" # 你的 LoRA 训练成果
+    PHASE1_PATH = "./checkpoints/phase1/checkpoint-463"
+    LORA_PATH = "./checkpoints/phase2/checkpoint-463" # 你的 LoRA 训练成果
     
     DATA_ROOT = "./full_dataset"
     JSON_QA = "./annotations/annotations_test.json"         # 测试集文本
@@ -98,20 +98,34 @@ def main():
             item = eval_dataset[i]
             
             # 准备输入张量并升维 (添加 batch=1 维度)，注意特征要转为 FP16
-            input_ids = item["input_ids"].unsqueeze(0).cuda()
+            input_ids_foul = item["input_ids_foul"].unsqueeze(0).cuda()
+            attention_mask_foul = item["attention_mask_foul"].unsqueeze(0).cuda()
+            
+            input_ids_card = item["input_ids_card"].unsqueeze(0).cuda()
+            attention_mask_card = item["attention_mask_card"].unsqueeze(0).cuda()
             clip_feat = item["video_spatio_temporal_features"].unsqueeze(0).to(torch.float16).cuda()
             pose_feat = item["pose_spatio_temporal_features"].unsqueeze(0).to(torch.float16).cuda()
             
             # 1. 大模型生成裁判解释
-            output_ids = model.generate(
-                input_ids=input_ids,
+            out_ids_foul = model.generate(
+                input_ids=input_ids_foul,
+                attention_mask=attention_mask_foul,
                 video_spatio_temporal_features=clip_feat,
                 pose_spatio_temporal_features=pose_feat,
-                max_new_tokens=256,
-                do_sample=False, 
-                temperature=0.0
+                max_new_tokens=128, temperature=0.0
             )
-            generated_text = tokenizer.decode(output_ids[0][input_ids.shape[1]:], skip_special_tokens=True).strip()
+            ans_foul = tokenizer.decode(out_ids_foul[0][input_ids_foul.shape[1]:], skip_special_tokens=True).strip()
+            
+            # --- 第二次：测给牌 ---
+            out_ids_card = model.generate(
+                input_ids=input_ids_card,
+                attention_mask=attention_mask_card,
+                video_spatio_temporal_features=clip_feat,
+                pose_spatio_temporal_features=pose_feat,
+                max_new_tokens=128, temperature=0.0
+            )
+            ans_card = tokenizer.decode(out_ids_card[0][input_ids_card.shape[1]:], skip_special_tokens=True).strip()            
+            
             
             # results.append(generated_text)
             # 2. ChatGPT 抽取客观标签
@@ -128,7 +142,7 @@ def main():
             
             results.append({
                 "video_id": item["video_id"],
-                "generated_explanation": generated_text,
+                "generated_explanation": f"Foul Assessment: {ans_foul} | Card Assessment: {ans_card}",
                 "gt_offence": gt_offence, # "pred_offence": pred_offence,
                 "gt_severity": gt_severity, # "pred_severity": pred_severity
             })
