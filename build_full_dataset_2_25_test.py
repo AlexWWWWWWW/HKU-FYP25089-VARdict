@@ -13,7 +13,7 @@ SOURCE_ROOT = "/userhome/cs/u3598820/soccernet/mvfouls"  # 原始数据集根目
 CLIP_ROOT = "/userhome/cs/u3598820/check_size/mvfouls"   # CLIP 特征根目录 (用于复制 .pkl)
 TARGET_ROOT = "/userhome/cs/u3598820/HKU-FYP25089-VARdict/full_dataset_2_25"  # 你的目标完整数据集路径
 NUM_SAMPLES = 100               # 采样数量
-SPLIT = "Train"                 # 从哪个集采样
+SPLIT = "Test"                 # 从哪个集采样
 DEVICE = 'cuda'
 
 # 假设 create_features.py 生成的 CLIP 特征就在原始视频文件夹里

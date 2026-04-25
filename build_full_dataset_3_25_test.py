@@ -11,9 +11,9 @@ from mmpose.apis import MMPoseInferencer
 # ================= 配置区域 =================
 SOURCE_ROOT = "/userhome/cs/u3598820/soccernet/mvfouls"  # 原始数据集根目录 (用于提取 Pose)
 CLIP_ROOT = "/userhome/cs/u3598820/check_size/mvfouls"   # CLIP 特征根目录 (用于复制 .pkl)
-TARGET_ROOT = "/userhome/cs/u3598820/HKU-FYP25089-VARdict/full_dataset_2_25"  # 你的目标完整数据集路径
+TARGET_ROOT = "/userhome/cs/u3598820/HKU-FYP25089-VARdict/full_dataset_3_25"  # 你的目标完整数据集路径
 NUM_SAMPLES = 100               # 采样数量
-SPLIT = "Train"                 # 从哪个集采样
+SPLIT = "Test"                 # 从哪个集采样
 DEVICE = 'cuda'
 
 # 假设 create_features.py 生成的 CLIP 特征就在原始视频文件夹里
@@ -32,7 +32,7 @@ def extract_and_save_pose(video_path, save_path, inferencer):
         result_generator = inferencer(video_path, return_vis=False, batch_size=64)
         
         all_frames_data = []
-        MAX_PEOPLE = 2
+        MAX_PEOPLE = 3
         NUM_KEYPOINTS = 26 
 
         for result in result_generator:

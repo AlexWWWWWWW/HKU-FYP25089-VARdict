@@ -11,7 +11,7 @@ from mmpose.apis import MMPoseInferencer
 # ================= 配置区域 =================
 SOURCE_ROOT = "/userhome/cs/u3598820/soccernet/mvfouls"  # 原始数据集根目录 (用于提取 Pose)
 CLIP_ROOT = "/userhome/cs/u3598820/check_size/mvfouls"   # CLIP 特征根目录 (用于复制 .pkl)
-TARGET_ROOT = "/userhome/cs/u3598820/HKU-FYP25089-VARdict/full_dataset_2_25"  # 你的目标完整数据集路径
+TARGET_ROOT = "/userhome/cs/u3598820/HKU-FYP25089-VARdict/full_dataset"  # 你的目标完整数据集路径
 NUM_SAMPLES = 100               # 采样数量
 SPLIT = "Train"                 # 从哪个集采样
 DEVICE = 'cuda'
@@ -29,11 +29,11 @@ def extract_and_save_pose(video_path, save_path, inferencer):
     """
     try:
         # return_vis=False 加速
-        result_generator = inferencer(video_path, return_vis=False, batch_size=64)
+        result_generator = inferencer(video_path, return_vis=False, batch_size=4)
         
         all_frames_data = []
         MAX_PEOPLE = 2
-        NUM_KEYPOINTS = 26 
+        NUM_KEYPOINTS = 17 
 
         for result in result_generator:
             predictions = result['predictions'][0]
@@ -69,7 +69,7 @@ def extract_and_save_pose(video_path, save_path, inferencer):
 def main():
     # 1. 初始化 Pose 模型 (只加载一次)
     print("正在加载 MMPose 模型...")
-    inferencer = MMPoseInferencer('body26', device=DEVICE)
+    inferencer = MMPoseInferencer('human', device=DEVICE)
 
     # 2. 确定源文件夹列表 (从 SOURCE_ROOT 找视频)
     source_split_dir = os.path.join(SOURCE_ROOT, SPLIT)
@@ -110,39 +110,29 @@ def main():
         for video_file in video_files:
             clip_name = os.path.basename(video_file) # clip_1.mp4
             clip_id = clip_name.split('.')[0]        # clip_1
-
-            pkl_name = f"PRE_CLIP_feature_{clip_id}.pkl"
-            npy_name = f"{clip_id}_pose.npy"
-            dst_pkl_path = os.path.join(target_action_dir, pkl_name)
-            dst_npy_path = os.path.join(target_action_dir, npy_name)
-
-            # --- 断点续跑：两个文件都已存在则直接跳过 ---
-            if os.path.exists(dst_pkl_path) and os.path.exists(dst_npy_path):
-                print(f"[跳过] {action_name}/{clip_id} 已处理完毕")
-                success_count += 1
-                continue
-
             print(f"处理 {clip_id}...")
-
+            
             # --- 任务 1: 复制 CLIP 特征 (.pkl) ---
             # 修改：从 CLIP_ROOT 对应的路径找 .pkl
+            pkl_name = f"PRE_CLIP_feature_{clip_id}.pkl"
             src_pkl_path = os.path.join(clip_action_dir, pkl_name)
+            dst_pkl_path = os.path.join(target_action_dir, pkl_name)
 
-            if not os.path.exists(dst_pkl_path):  # 避免重复拷贝
-                if os.path.exists(src_pkl_path):
-                    shutil.copy2(src_pkl_path, dst_pkl_path)
-                else:
-                    # print(f"警告: 找不到 CLIP 特征 {src_pkl_path}，跳过此 Clip")
-                    continue # 如果没有 CLIP 特征，通常这个样本也没法用，直接跳过
+            if os.path.exists(src_pkl_path):
+                shutil.copy2(src_pkl_path, dst_pkl_path)
+            else:
+                # print(f"警告: 找不到 CLIP 特征 {src_pkl_path}，跳过此 Clip")
+                continue # 如果没有 CLIP 特征，通常这个样本也没法用，直接跳过
 
             # --- 任务 2: 提取并保存 Pose 特征 (.npy) ---
             # 修改：继续使用 SOURCE_ROOT 里的 video_file 进行 Pose 提取
+            npy_name = f"{clip_id}_pose.npy"
+            dst_npy_path = os.path.join(target_action_dir, npy_name)
+
+            # 运行 Pose 推理
             if not os.path.exists(dst_npy_path): # 避免重复跑
                 extract_success = extract_and_save_pose(video_file, dst_npy_path, inferencer)
                 if not extract_success:
-                    # 提取失败时删除可能的半成品，下次重跑时会重新处理
-                    if os.path.exists(dst_npy_path):
-                        os.remove(dst_npy_path)
                     continue
 
             print(f"{src_pkl_path} 和 {video_file} 已成功处理并转移到 {target_action_dir}")
