@@ -33,9 +33,11 @@ class VARdictDataset(Dataset):
                  tokenizer, 
                  video_token_len=300,
                  mode="train",
-                 json_path_ground_truth=None,):
+                 json_path_ground_truth=None,
+                 dim=68):
         
         self.mode = mode                 # mode
+        self.dim = dim # for fallback.
         if self.mode == "eval":
             if json_path_ground_truth is None: raise Exception("no ground truth for evaluation.")
             print(f"Loading Ground Truth from {json_path_ground_truth}...")
@@ -303,11 +305,11 @@ class VARdictDataset(Dataset):
             if pose_data.shape[0] > 0:
                 pose_flat = pose_data.reshape(pose_data.shape[0], -1)
             else:
-                pose_flat = np.zeros((1, 68))
+                pose_flat = np.zeros((1, self.dim))
             pose_tensor = torch.from_numpy(pose_flat).float()
         except Exception as e:
             print(f"Error loading Pose {sample['pose_path']}: {e}")
-            pose_tensor = torch.zeros(1, 68).float()
+            pose_tensor = torch.zeros(1, self.dim).float()
         # print(pose_tensor.shape)
 
         # --- 打印测试：归一化前 ---
