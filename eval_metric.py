@@ -123,7 +123,7 @@ def main():
 
     # ================= 算分环节 =================
     # 过滤掉无法提取的 "Unknown" 数据，防止 sklearn 报错
-    valid_idx_off = [i for i, p in enumerate(y_pred_off) if p != "Unknown" and y_true_off[i] != "Unknown"]
+    valid_idx_off = [i for i, p in enumerate(y_pred_off) if p != "Unknown" and y_true_off[i] != "Unknown" and y_true_off[i] != "Between"]
     valid_idx_sev = [i for i, p in enumerate(y_pred_sev) if p != "Unknown" and y_true_sev[i] != "Unknown"]
 
     print("\n" + "="*40)
