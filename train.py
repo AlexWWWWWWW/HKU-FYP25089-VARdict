@@ -17,7 +17,7 @@ def get_latest_checkpoint(output_dir):
     if not os.path.exists(output_dir):
         return None
     # 查找 checkpoint-* 文件夹
-    checkpoints = glob.glob(os.path.join(output_dir, "checkpoint-*"))
+    checkpoints = glob.glob(os.path.join(output_dir, "checkpoint-*"))grou
     if not checkpoints:
         return None
     # 按修改时间排序，找最新的

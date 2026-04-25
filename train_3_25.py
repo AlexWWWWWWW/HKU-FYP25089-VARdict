@@ -41,14 +41,14 @@ def main():
     X_VARS_WEIGHTS = "/userhome/cs/u3598820/X-VARS_weight/X-VARS_weights" 
     
     # 你的数据路径
-    DATA_ROOT = "./full_dataset_3_17"
+    DATA_ROOT = "./full_dataset_3_25"
     JSON_QA = "./annotations/annotations_train.json"
     
     # 这里的 JSON_PRED 是 Stage 1 分类器生成的预测结果
     # 必须存在，否则 dataset 构建 Prompt 时会报错
     JSON_PRED = "./predictionsTrain_clip.json" 
     
-    OUTPUT_DIR = "./checkpoints_3_17"
+    OUTPUT_DIR = "./checkpoints_3_25"
     
     # ================= 1. 确定加载路径 =================
     # 优先检查是否有已经训练过的 checkpoint
@@ -66,7 +66,7 @@ def main():
     # ================= 2. 加载模型 =================
     model, tokenizer = safe_load_model(
         load_path, 
-        pose_feature_dim=3*17*2, # 你的 Pose 维度
+        pose_feature_dim=3*26*2, # 你的 Pose 维度
         device='cuda'
     )
 
@@ -107,7 +107,7 @@ def main():
         json_path_qa=JSON_QA,
         json_path_predictions=JSON_PRED,
         tokenizer=tokenizer,
-        dim=3*17*2,
+        dim=3*26*2,
     )
     
     from transformers import DataCollatorForLanguageModeling
