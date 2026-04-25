@@ -1,8 +1,8 @@
 # HKU-FYP25089-VARdict
 
-### Pose Estimator: YOLO vs OpenPose
+### Pose Estimator: RTMPose
 * YOLO has less dependency, but a simpler bone structure, no neck and glutes
-* MMPose: more points, more accurate structure compared to YOLO
+* RTMPose: more points, more accurate structure compared to YOLO
 
 
 ### Environment
@@ -59,7 +59,7 @@ ssh -N -L 7860:<COMPUTE_NODE_IP>:7860 -J <USERNAME>@gpu2gate1.cs.hku.hk <USERNAM
 
 ### 3. Run the gradio script
 
-such as`python gradio_script.py --port 7860`
+use `python demo_launcher_0410.py --port 7860 --share` to start our VARdict demo.
 
 ### 4. Open in Browser
 
@@ -72,4 +72,27 @@ Although some files have a suffix of .mp4, it may be a fake .mp4 file. Please us
 `ffmpeg -i fake.mp4 -c:v libx264 -pix_fmt yuv420p -movflags +faststart -c:a aac real.mp4`
 
 
+
+## Model
+
+Our model uses Vicuna to process the input. We uses a feature projector to project the CLIP+Pose features (>1024dim) into the Vicuna embedding (1024dim). `load_model.py` loads our model, initialize with the X-VARS weights. If no projector weight is provided, we use random weights.
+
+## Dataset
+`dataset.py` defines our dataset, including the CLIP features and RTMPose features. There are two modes in this dataset, train and evaluate.
+#### train mode
+concatenate CLIP and Pose together.
+Tokenize the annotations as the labels.
+
+#### evaluate mode
+returns the CLIP predicted features, Pose data, and two questions: "is this a foul? why?" and "what card should you give? why?".
+
+## Training
+`train.py` is our script for training. Our training contains two stages, first we freeze the Vicuna, and train the projector to project CLIP+Pose features consistently. The second stage involves LoRA fine-tuning. We fix the projector and fine-tune the Vicuna
+
+
+## Evaluation
+We use the evaluation mode in our dataset to conduct the evaluation. We focus on four metrics: foul accuracy, foul balanced accuracy, card accuracy and card balanced accuracy. We use ChatGPT to extract the natural language responses into labels. `evaluation_*_**.py` is our evaluation script.
+
+## Results
+We achieved a better result over foul accuracy and card accuracy plus balanced accuracy. But we did similar to X-VARS on foul balanced accuracy.
 
